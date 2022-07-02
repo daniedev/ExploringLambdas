@@ -1,8 +1,8 @@
 package github.daniedev.collectionsassessment;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class CollectionsAssessment {
 
@@ -31,9 +31,9 @@ public class CollectionsAssessment {
 
     }
 
-    private static void printNamesConditionally(List<Person> people, Condition condition) {
+    private static void printNamesConditionally(List<Person> people, Predicate<Person> predicate) {
         for (Person p : people) {
-            if (condition.isValid(p))
+            if (predicate.test(p))
                 System.out.println(p);
         }
     }

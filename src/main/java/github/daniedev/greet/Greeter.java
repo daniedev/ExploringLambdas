@@ -17,5 +17,8 @@ public class Greeter {
             }
         };
         greeter.greet(anonymousGreeting);
+
+        Thread thread = new Thread(() -> System.out.println("Hello World by implementing a Runnable"));
+        thread.run();
     }
 }

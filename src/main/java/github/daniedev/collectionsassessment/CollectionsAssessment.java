@@ -16,36 +16,19 @@ public class CollectionsAssessment {
         );
 
         //Task1: Sort list by last name
-        people.sort(new Comparator<Person>() {
-            @Override
-            public int compare(Person o1, Person o2) {
-                return o1.getLastName().compareTo(o2.getLastName());
-            }
-        });
+        people.sort((p1, p2) -> p1.getLastName().compareTo(p2.getLastName()));
 
 
         //Task2: Create a method that prints all elements in the list
         System.out.println("Printing all names");
-        printAllNames(people);
+        printNamesConditionally(people, p -> true);
 
 
         //Task3: Create a method that prints all people with last name beginning with C
         System.out.println("Printing people's last name beginning with C");
-        printNamesConditionally(people, new Condition() {
-            @Override
-            public boolean isValid(Person p) {
-                return p.getLastName().startsWith("C");
-            }
-        });
+        printNamesConditionally(people, p -> p.getLastName().startsWith("C"));
 
 
-    }
-
-
-    private static void printAllNames(List<Person> people) {
-        for (Person p : people) {
-            System.out.println(p);
-        }
     }
 
     private static void printNamesConditionally(List<Person> people, Condition condition) {

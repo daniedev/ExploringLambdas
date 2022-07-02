@@ -7,7 +7,15 @@ public class Greeter {
 
     public static void main(String[] args) {
         Greeter greeter = new Greeter();
-        Greeting greeting = () -> System.out.println("Hello World!");
-        greeter.greet(greeting);
+        Greeting lambdaGreeting = () -> System.out.println("Hello World!");
+        greeter.greet(lambdaGreeting);
+
+        Greeting anonymousGreeting = new Greeting() {
+            @Override
+            public void perform() {
+                System.out.println("HelloWorld greeting by interface implementation(anonymous class)");
+            }
+        };
+        greeter.greet(anonymousGreeting);
     }
 }

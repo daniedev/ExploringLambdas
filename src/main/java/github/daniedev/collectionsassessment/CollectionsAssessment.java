@@ -33,9 +33,8 @@ public class CollectionsAssessment {
     }
 
     private static void performConditionally(List<Person> people, Predicate<Person> predicate, Consumer<Person> consumer) {
-        for (Person p : people) {
-            if (predicate.test(p))
-                consumer.accept(p);
-        }
+        people.forEach(p -> {
+            if (predicate.test(p)) consumer.accept(p);
+        });
     }
 }

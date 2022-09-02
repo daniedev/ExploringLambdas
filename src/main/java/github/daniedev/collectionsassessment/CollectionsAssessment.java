@@ -22,7 +22,7 @@ public class CollectionsAssessment {
 
         //Task2: Create a method that prints all elements in the list
         System.out.println("Printing all names");
-        performConditionally(people, p -> true, p -> System.out.println(p));
+        performConditionally(people, p -> true, System.out::println);
 
 
         //Task3: Create a method that prints all people with last name beginning with C
